@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="esn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hot Finds</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container" style="text-align:center">
+            <div class="jumbotron">
+                <h1>Mission To Mars</h1>
+                <a href="/scrape" class="btn btn-primary">Scrape New Data</a>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <h2>Latest Mars News</h2>
+            {{ headlines }}
+        </div>
+        <div class="container">
+            <img src="{{ imageMars }}">
+        </div>
+
+        <div class="container">
+
+            {{ mars_facts|safe }}
+        </div>
+
+
+        {% for i in hemisphere_image_urls %}
+            <img src="{{ i }}">
+        {% endfor %}
+
+
+    </body>
+</html>
+
+<!-- return render_template("index.html", headlines=data["headlines"], imageMars=data["imageMars"], mars_facts=data["mars_facts"], hemisphere_image_urls=data["hemisphere_image_urls"]) -->
